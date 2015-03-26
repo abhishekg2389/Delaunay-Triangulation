@@ -105,7 +105,7 @@ void Voronoi::RemoveVArc(const DPoint *p, double y, VArc *a) {
     if(a==NULL) {
       cout<<"error";
     }
-  return;
+    return;
   }
 
   VArc *arcL;
@@ -140,7 +140,7 @@ void Voronoi::DeleteVArc(VArc *a) {
   VArc *pa = a->getParent();
   if(pa->isLeft()) {
     if(a->isLeft()) {
-	  pa->getParent()->setLeft(pa->getRight());
+      pa->getParent()->setLeft(pa->getRight());
     }
     else {
       pa->getParent()->setLeft(pa->getLeft());
@@ -254,7 +254,7 @@ VArc *Voronoi::getVArc(const DPoint *p, double y) const {
 }
 
 VEdge *Voronoi::getVEdge(const DPoint *p1, const DPoint *p2) const {
-  for(int i = 0; i < VEdges.size() ; ++i)  {
+  for(int i = 0; i < VEdges.size() ; ++i) {
     if((p1 == VEdges[i]->getr1() && p2 == VEdges[i]->getr2()) || (p1 == VEdges[i]->getr2() && p2 == VEdges[i]->getr1())) {
       return VEdges[i];
     }
