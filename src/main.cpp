@@ -8,6 +8,7 @@
 #include <ogdf/basic/Graph_d.h>
 #include <ogdf/basic/GraphAttributes.h>
 #include <ogdf/fileformats/GraphIO.h>
+
 #include <math.h>
 #include <iostream>
 #include <queue>
@@ -47,7 +48,7 @@ int main() {
     node nd = G.newNode(i);
     GA.x(nd) = ((double)rand()/(double)RAND_MAX)*width;
     GA.y(nd) = ((double)rand()/(double)RAND_MAX)*height;
-    //GA.label(nd) = "(" + to_string(GA.x(nd)) + "," + to_string(GA.y(nd)) + ")";
+    GA.label(nd) = "(" + to_string(GA.x(nd)) + "," + to_string(GA.y(nd)) + ")";
 
     points.push_back(new DPoint(GA.x(nd), GA.y(nd)));
     cout<<GA.x(nd)<<" "<<GA.y(nd)<<endl;
